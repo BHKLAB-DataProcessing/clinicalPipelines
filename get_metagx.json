@@ -1,0 +1,26 @@
+{
+  "pipeline": {
+    "name": "get_metagx"
+  },
+  "transform": {
+    "image": "bhklab/metagxpancreas:v1",
+    "cmd": [
+      "Rscript", 
+      "/pfs/getMetaGxPan/getMetaGx.R"]
+    },
+  
+  "resource_requests": {
+    "memory": "100M"
+  },
+  "input": {
+    "cross": [
+      {
+        "git": {
+          "url": "https://github.com/BHKLAB-Pachyderm/getMetaGxPan.git",
+          "name": "",
+          "branch": "main"
+        }
+      }
+    ]
+  }
+}
